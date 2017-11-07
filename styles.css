@@ -2,6 +2,7 @@
 /*! fundet det inde på hjemmeside fonts.google.com !*/
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans');
 
+
 /*Desktop Styles*/
 body { /*Alt under titlen*/
 	background: #212121;
@@ -10,7 +11,6 @@ body { /*Alt under titlen*/
 	margin: 0;
 	padding: 0;
 }
-
 
 h1 {font-family: 'Bree Serif', serif; /*titlen*/
 	font-size: 60px;
@@ -21,6 +21,7 @@ footer { /*copyright linjen*/
 	padding: 20px 0; /*20px 0 betyder top-bottom /right-left*/
 	font-size: larger; 	
 }
+
 
 /*Navigation Main Styles*/
 nav {
@@ -49,24 +50,49 @@ nav a:hover {
 	background-color: #212121; /*Farven, når man stryger musen henover menupunktet*/
 }
 
+/*Dropdown Menu Styles*/
+nav ul ul { 
+	display: none; /*Her gør man dropdown menuerne usynlige, så de kun vises, når man tager musen henover*/
+	position: absolute;/*Her fortæller man, at den skal kigge på, hvor forældreelementet er*/
+}
+
+/*Display Dropdowns on hover*/
+nav ul li:hover > ul { /*> ul betyder det første child (den første dropdown menu)*/
+	display: inherit; /*Den skal bare arve fra dens forældreelement, derfor sætter man den på inherit*/
+	background-color: #AA898A; /*Har taget den samme farve som fra nav punktet*/
+	width: 150px; /*Her bestemmer vi hvor lange felterne skal være*/
+}
+
+nav ul ul li {
+	display: block; /*Her får vi den sorte baggrund til at fylde hele punktet, når man stryger musen henover et af dropdown felterne*/
+}
+
+
 /*Responsive Styles with CSS media query*/
 /*Her skal vi fortælle, hvilke enheder der kommer til at skulle se denne side*/
 @media all and (max-width : 768px) { /*=Alle enheder skal kunne se siden plus alle over 768px bliver ikke påvirket af disse styles - påvirker kun enheder under 768px.*/
 	h1 { /*Jeg kopierede det ind fra h1, men fjernede font-family, da den ikke skal ændres.*/
 		font-size: smaller; /*Ændrede font-size og margin-top, så det passer til en mindre enhed*/
-		margin-top: 0px;
+		margin-top: 40px; /*Hvor langt oppe på siden, overskriften skal stå*/
+		text-align: center; 
 	}
 	footer {
 		display: none; /*Hvis det er en mindre enhed, så vises fodnoten (copyright) ikke*/
 	}
 	
 	nav ul li {
-		display:block;
-		text-align: center;
+		text-align: center; /*Sætter punkterne i centeret af siden*/
+		width: 100%; /*Får menupunkterne til at gå lodret ned under hinanden*/
+		border-bottom: 1px solid white; /*Giver hvert menupunkt en hvid streg for at skelne punkterne fra hinanden*/
 	}
 	nav a {
-		font-size: smaller;
-		padding: 10px 16px;
+		font-size: smaller; /*Størrelsen på skriften*/
+	}
+	/*Responsive dropdown styles*/
+	nav ul li:hover >ul {
+		position: static; /* static betyder, at elementerne får deres plads som i den ordinære størrelse */
+		background-color: #212121;
+		width: 100%; /*Så dropdown felterne er ligeså lange som menufelterne*/
 	}
 	
 	/*End media query*/
