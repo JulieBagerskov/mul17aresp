@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/*! fundet det inde på hjemmeside fonts.google.com !*/
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans');
+
+/*Desktop Styles*/
+body { /*Alt under titlen*/
+	background: #212121;
+	font-family: Ópen Sans´, sans-serif;
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+
+h1 {font-family: 'Bree Serif', serif; /*titlen*/
+	font-size: 60px;
+	margin-top: 100px;
+}
+
+footer { /*copyright linjen*/
+	padding: 20px 0; /*20px 0 betyder top-bottom /right-left*/
+	font-size: larger; 	
+}
+
+/*Navigation Main Styles*/
+nav {
+	background-color:#AA898A;
+}
+
+nav ul {
+	list-style: none; /*Det er punkterne i menuen. De forsvinder.*/
+	padding: 0; /*Her rykker vi punkterne helt ud til venstre på siden*/
+	margin: 0;  /*Her rykker vi punkterne helt ud til venstre på siden*/
+}
+
+nav ul li { 
+	display: inline-block; /*Her får vi rykket menuerne op ved siden af hinanden, vandret.*/ 
+}
+
+nav a {
+	display:block; 
+	color: white; /*Farven på menupunkternes skrift*/
+	font-size: 17px; /*Størrelsen på skriften*/
+	text-decoration: none; /*Fjerner de små linjer under menupunkterne*/
+	padding: 14px 20px; /*Spreder hvert punkt, så der er lidt mere luft imellem dem.*/
+}
+
+nav a:hover {
+	background-color: #212121; /*Farven, når man stryger musen henover menupunktet*/
+}
+
+/*Responsive Styles with CSS media query*/
+/*Her skal vi fortælle, hvilke enheder der kommer til at skulle se denne side*/
+@media all and (max-width : 768px) { /*=Alle enheder skal kunne se siden plus alle over 768px bliver ikke påvirket af disse styles - påvirker kun enheder under 768px.*/
+	h1 { /*Jeg kopierede det ind fra h1, men fjernede font-family, da den ikke skal ændres.*/
+		font-size: smaller; /*Ændrede font-size og margin-top, så det passer til en mindre enhed*/
+		margin-top: 0px;
+	}
+	footer {
+		display: none; /*Hvis det er en mindre enhed, så vises fodnoten (copyright) ikke*/
+	}
+	
+	nav ul li {
+		display:block;
+		text-align: center;
+	}
+	nav a {
+		font-size: smaller;
+		padding: 10px 16px;
+	}
+	
+	/*End media query*/
+}
