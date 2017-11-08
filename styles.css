@@ -67,15 +67,33 @@ nav ul ul li {
 	display: block; /*Her får vi den sorte baggrund til at fylde hele punktet, når man stryger musen henover et af dropdown felterne*/
 }
 
+.MyStyle {
+	display: none; 
+}
+
+Button {
+	display: none; /*Gør Toggle menuen usynlig*/
+}
+
 
 /*Responsive Styles with CSS media query*/
 /*Her skal vi fortælle, hvilke enheder der kommer til at skulle se denne side*/
 @media all and (max-width : 768px) { /*=Alle enheder skal kunne se siden plus alle over 768px bliver ikke påvirket af disse styles - påvirker kun enheder under 768px.*/
+	
+	button {
+		display:block;/*Gør Toggle menuen synlig*/
+	}
+	
+	nav {
+		display:none; 
+	}
+	
 	h1 { /*Jeg kopierede det ind fra h1, men fjernede font-family, da den ikke skal ændres.*/
 		font-size: smaller; /*Ændrede font-size og margin-top, så det passer til en mindre enhed*/
 		margin-top: 40px; /*Hvor langt oppe på siden, overskriften skal stå*/
 		text-align: center; 
 	}
+	
 	footer {
 		display: none; /*Hvis det er en mindre enhed, så vises fodnoten (copyright) ikke*/
 	}
